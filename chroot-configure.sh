@@ -11,4 +11,4 @@ fi
 
 curl -s --fail https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/configure.sh > /mnt/configure.sh
 chmod +x /mnt/configure.sh
-arch-chroot /mnt "./configure.sh $DEVICE"
+arch-chroot /mnt "/configure.sh $DEVICE"
