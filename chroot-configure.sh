@@ -2,6 +2,8 @@
 
 set -e
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 DEFAULT_DEVICE=/dev/sda2
 DEVICE=$1
 if [ -z "$DEVICE" ]; then
@@ -14,9 +16,8 @@ if [ -z "$HOSTNAME" ]; then
   HOSTNAME=$DEFAULT_HOSTNAME
 fi
 
-# download the real configure script
-curl -s --fail https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/configure.sh > /mnt/configure.sh
-chmod +x /mnt/configure.sh
+#  copy the real configure script to the mount point
+cp -f $DIR/configure.sh /mnt/
 
 # configure using chroot
 arch-chroot /mnt ./configure.sh "$DEVICE" "$HOSTNAME"
