@@ -32,7 +32,7 @@ Scripts to speed up set up of Arch Linux in a VirtualBox VM
   ./base-install.sh
   ```
 
-- Run the `chroot-configure.sh` script
+- Run the `chroot-configure.sh` script. This will eventually prompt for the root password and then reboot the VM
 
   ```
   ./chroot-configure.sh
