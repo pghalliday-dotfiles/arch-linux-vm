@@ -9,6 +9,12 @@ if [ -z "$DEVICE" ]; then
   DEVICE=$DEFAULT_DEVICE
 fi
 
+# make sure the device is not in use
+umount /mnt/boot || true
+umount /mnt/home || true
+umount /mnt || true
+swapoff ${DEVICE}3 || true
+
 # create the partition table
 parted -s $DEVICE mklabel gpt
 parted -s $DEVICE mkpart ESP fat32 1MiB 513MiB
