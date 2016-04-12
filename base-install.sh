@@ -39,3 +39,6 @@ mount ${DEVICE}4 /mnt/home
 
 # install the base system
 pacstrap /mnt base base-devel
+
+# generate the fstab file
+genfstab -U /mnt >> /mnt/etc/fstab
