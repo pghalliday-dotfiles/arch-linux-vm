@@ -42,8 +42,8 @@ sed -i "/\\slocalhost$/s/$/ $HOSTNAME/" /etc/hosts
 systemctl enable dhcpcd@enp0s3.service
 
 # install and enable the VirtualBox Guest Utils
-pacman -S virtualbox-guest-utils
-pacman -S linux-headers
+pacman -S --noconfirm virtualbox-guest-utils
+pacman -S --noconfirm linux-headers
 systemctl enable vboxservice.service
 cat > /etc/modules-load.d/virtualbox.conf <<EOF
 vboxguest
