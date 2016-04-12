@@ -52,13 +52,18 @@ vboxvideo
 EOF
 
 # set the root password (will prompt for input)
+echo
+echo "Set the root password:"
 passwd
 
 # create a non root user and add to sudoers (will prompt for input)
 pacman -S --noconfirm sudo
+echo
 echo "Enter a user name:"
 read USERNAME
 useradd -m -s /bin/bash -G vboxsf "$USERNAME"
+echo
+echo "Set the password for $USERNAME:"
 passwd $USERNAME
 echo "$USERNAME ALL=(ALL:ALL) ALL" > /etc/sudoers.d/$USERNAME
 chmod 0440 /etc/sudoers.d/$USERNAME
