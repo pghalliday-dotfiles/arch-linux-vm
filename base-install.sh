@@ -18,6 +18,7 @@ swapoff ${DEVICE}3 || true
 # create the partition table
 parted -s $DEVICE mklabel gpt
 parted -s $DEVICE mkpart ESP fat32 1MiB 513MiB
+parted -s $DEVICE set 1 boot on
 parted -s $DEVICE mkpart primary ext4 513MiB 20.5GiB
 parted -s $DEVICE mkpart primary linux-swap 20.5GiB 24.5GiB
 parted -s $DEVICE mkpart primary ext4 24.5GiB 100%
