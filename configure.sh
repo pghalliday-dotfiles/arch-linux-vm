@@ -17,7 +17,7 @@ locale-gen
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 # Set the time zone and adjust the hardware clock
-ln -s /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
+ln -sf /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 hwclock --systohc --utc
 
 # install the bootloader and add a boot entry
