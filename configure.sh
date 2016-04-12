@@ -3,10 +3,15 @@
 set -e
 
 DEFAULT_DEVICE=/dev/sda2
-
 DEVICE=$1
 if [ -z "$DEVICE" ]; then
   DEVICE=$DEFAULT_DEVICE
+fi
+
+DEFAULT_HOSTNAME=arch-linux
+HOSTNAME=$2
+if [ -z "$HOSTNAME" ]; then
+  HOSTNAME=$DEFAULT_HOSTNAME
 fi
 
 # Generate the locale
@@ -30,5 +35,11 @@ options        root=PARTUUID=$(blkid -s PARTUUID -o value $DEVICE) rw
 EOF
 
 # set the host name
-echo "arch-linux" > /etc/hostname
+echo "$HOSTNAME" > /etc/hostname
+sed -i "/\\slocalhost$/s/$/ $HOSTNAME/" /etc/hosts
 
+# enable dhcp on the network interface
+systemctl enable dhcpcd@enp0s3.service
+
+# set the root password (will prompt for input)
+passwd
