@@ -18,18 +18,22 @@ Scripts to speed up set up of Arch Linux in a VirtualBox VM
   - Open the VM settings and under `System`, check `Enable EFI (special OSes only)`
 - Boot the VM from the downloaded ISO
   - This may take a couple of minutes to start and look like it has hung - **be patient**
-- Download and run the `base-install.sh` script
+- Download and untar the repo
 
   ```
-  curl -s https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/base-install.sh > base-install.sh
-  chmod +x base-install.sh
+  wget https://github.com/pghalliday-dotfiles/arch-linux-vm/archive/master.tgz
+  tar -zxf arch-linux-vm-master.tar.gz
+  cd arch-linux-vm-master
+  ```
+
+- Run the `base-install.sh` script
+
+  ```
   ./base-install.sh
   ```
 
-- Download and run the `chroot-configure.sh` script
+- Run the `chroot-configure.sh` script
 
   ```
-  curl -s https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/chroot-configure.sh > chroot-configure.sh
-  chmod +x chroot-configure.sh
   ./chroot-configure.sh
   ```
