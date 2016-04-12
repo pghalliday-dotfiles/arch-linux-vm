@@ -24,9 +24,10 @@ swapon ${DEVICE}3
 mkfs.ext4 ${DEVICE}4
 
 # mount the partitions
+mkdir -p /mnt
+mount ${DEVICE}2 /mnt
 mkdir -p /mnt/boot
 mkdir -p /mnt/home
-mount ${DEVICE}2 /mnt
 mount ${DEVICE}1 /mnt/boot
 mount ${DEVICE}4 /mnt/home
 
