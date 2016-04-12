@@ -40,6 +40,3 @@ sed -i "/\\slocalhost$/s/$/ $HOSTNAME/" /etc/hosts
 
 # enable dhcp on the network interface
 systemctl enable dhcpcd@enp0s3.service
-
-# set the root password (will prompt for input)
-passwd
