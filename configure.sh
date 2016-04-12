@@ -22,7 +22,7 @@ hwclock --systohc --utc
 
 # install the bootloader and add a boot entry
 bootctl install
-cat > /boot/EFI/loader/entries/arch.conf <<EOF
+cat > /boot/loader/entries/arch.conf <<EOF
 title          Arch Linux
 linux          /vmlinuz-linux
 initrd         /initramfs-linux.img
