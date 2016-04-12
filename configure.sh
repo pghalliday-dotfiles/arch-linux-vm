@@ -50,6 +50,8 @@ vboxguest
 vboxsf
 vboxvideo
 EOF
+# allow users to access shared folders mounted under /media
+chmod 0755 /media
 
 # set the root password (will prompt for input)
 echo
