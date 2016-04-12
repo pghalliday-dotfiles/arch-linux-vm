@@ -10,7 +10,7 @@ if [ -z "$DEVICE" ]; then
 fi
 
 # Generate the locale
-sed -i '/^#en_US.UTF-8 UTF-8$/s/^#//' /etc/locale.gen
+sed -i '/^#en_US\.UTF-8 UTF-8/s/^#//' /etc/locale.gen
 locale-gen
 
 # Set the locale
