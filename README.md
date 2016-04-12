@@ -21,5 +21,15 @@ Scripts to speed up set up of Arch Linux in a VirtualBox VM
 - Download and run the `base-install.sh` script
 
   ```
-  curl -s https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/base-install.sh | sh
+  curl -s https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/base-install.sh > base-install.sh
+  chmod +x base-install.sh
+  ./base-install.sh
+  ```
+
+- Download and run the `chroot-configure.sh` script
+
+  ```
+  curl -s https://raw.githubusercontent.com/pghalliday-dotfiles/arch-linux-vm/master/chroot-configure.sh > chroot-configure.sh
+  chmod +x chroot-configure.sh
+  ./chroot-configure.sh
   ```

@@ -21,9 +21,6 @@ chmod +x /mnt/configure.sh
 # configure using chroot
 arch-chroot /mnt ./configure.sh "$DEVICE" "$HOSTNAME"
 
-# set the root password (prompts for input)
-arch-chroot /mnt passwd
-
 # unmount the partitions and reboot
 umount -R /mnt
 reboot
