@@ -11,7 +11,7 @@ fi
 
 # Generate the locale
 sed -i '/^#en_US.UTF-8 UTF-8$/s/^#//' /etc/locale.gen
-locale.gen
+locale-gen
 
 # Set the locale
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
