@@ -65,7 +65,7 @@ read USERNAME
 if [ ! id -u "$USERNAME" ]; then
   useradd -m "$USERNAME"
 fi
-usermod -a -G vboxsf -s /bin/bash
+usermod -a -G vboxsf -s /bin/bash $USERNAME
 echo
 echo "Set the password for $USERNAME:"
 passwd $USERNAME
