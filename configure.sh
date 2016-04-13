@@ -62,7 +62,7 @@ pacman -S --noconfirm sudo
 echo
 echo "Enter a user name:"
 read USERNAME
-if [ ! id -u "$USERNAME" ]; then
+if ! id -u "$USERNAME"; then
   useradd -m "$USERNAME"
 fi
 usermod -a -G vboxsf -s /bin/bash $USERNAME
