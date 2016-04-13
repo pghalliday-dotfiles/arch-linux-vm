@@ -51,6 +51,7 @@ vboxsf
 vboxvideo
 EOF
 # allow users to access shared folders mounted under /media
+mkdir -p /media
 chmod 0755 /media
 
 # disable the root password
