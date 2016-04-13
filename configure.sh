@@ -53,17 +53,18 @@ EOF
 # allow users to access shared folders mounted under /media
 chmod 0755 /media
 
-# set the root password (will prompt for input)
-echo
-echo "Set the root password:"
-passwd
+# disable the root password
+passwd -dl
 
 # create a non root user and add to sudoers (will prompt for input)
 pacman -S --noconfirm sudo
 echo
 echo "Enter a user name:"
 read USERNAME
-useradd -m -s /bin/bash -G vboxsf "$USERNAME"
+if [ ! id -u "$USERNAME" ]; then
+  useradd -m "$USERNAME"
+fi
+usermod -a -G vboxsf -s /bin/bash
 echo
 echo "Set the password for $USERNAME:"
 passwd $USERNAME
