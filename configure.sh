@@ -55,7 +55,7 @@ mkdir -p /media
 chmod 0755 /media
 
 # disable the root password
-passwd -dl
+passwd -dl root
 
 # create a non root user and add to sudoers (will prompt for input)
 pacman -S --noconfirm sudo
