@@ -21,8 +21,8 @@ Scripts to speed up set up of Arch Linux in a VirtualBox VM
 - Download and untar the repo
 
   ```
-  wget -O arch.tgz https://git.io/vVNKH
-  tar -zxf arch.tgz
+  curl -L -o arch.tgz https://git.io/vVNKH
+  tar zxf arch.tgz
   cd arch-linux-vm-master
   ```
 
