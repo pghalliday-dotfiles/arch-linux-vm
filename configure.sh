@@ -31,7 +31,7 @@ cat > /boot/loader/entries/arch.conf <<EOF
 title          Arch Linux
 linux          /vmlinuz-linux
 initrd         /initramfs-linux.img
-options        root=PARTUUID=$(blkid -s PARTUUID -o value $DEVICE) rw
+options        root=PARTUUID=$(blkid -s PARTUUID -o value $DEVICE) rw iomem=relaxed
 EOF
 
 # set the host name
